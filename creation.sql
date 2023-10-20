@@ -49,7 +49,6 @@ CREATE TABLE CONCERT (
     nomCo varchar(30),
     debutCo int,
     finCo int,
-    dateConcert datetime,
     tempsMont decimal(12,2),
     tempsDemont decimal(12,2),
     nbHerbergCo int
@@ -74,6 +73,7 @@ CREATE TABLE EVENEMENT (
     nomEvent varchar(30),
     prix int DEFAULT 0,
     dateEvent datetime,
+    dureeEvent TIME,
     publicAutorise BOOLEAN DEFAULT TRUE,
     nbPreinscription int,
     PRIMARY KEY (idGr,idEvent)

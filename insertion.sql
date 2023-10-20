@@ -18,6 +18,7 @@ INSERT INTO GROUPE_FAVORIS(idGr,idSpec) VALUES(1, 1);
 
 INSERT INTO COMPOSITION_GROUPE(idGr,idArt) VALUES(1, 1),(1,2),(1,3),(1,4),(1,5),(1,6);
 
-INSERT INTO EVENEMENT(idGr,idEvent,nomEvent,prix,publicAutorise) VALUES();
+INSERT INTO EVENEMENT(idGr,idEvent,nomEvent,prix,dateEvent,dureeEvent,publicAutorise) VALUES(1,1,"",5,'12-01-16 12:32','2:10:30', true),
+(2,1,"",5,'12-01-16 13:32','2:10:30', true),(3,1,"",5,'12-01-16 14:32','2:10:30', true);
 
 INSERT INTO RESERVATION(idSpec,idCo,dureeReservation,prixReservation) VALUES();
