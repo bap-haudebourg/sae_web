@@ -1,0 +1,26 @@
+{% extends "home.html" %}
+{% block title %}Réservation{% endblock %}
+{% block style %} 
+<link rel="stylesheet" href="/static/css/information.css">
+{% endblock %}
+{% block content %}
+<main>
+    <h1>Reservation</h1>
+    <p>Nom de l'evement : {{evenement.nomEvent}} </p>
+    <p>Date de l'evement : {{evenement.dateEvent}} </p>
+    <p>Heure de début : {{ concert.debutCo }}</p>
+    <p>Heure de fin : {{ concert.finCo }}</p>
+    <p>Date : {{ evenement.dateEvent }}</p>
+    <p>Lieu : {{ evenement.nomLieu }}</p>
+    <p>Prix : {{ evenement.prix }}€ </p>
+    <p>ID :{{evenement.idCo}}</p>
+    <form method="POST" role="form" action="{{ url_for ('reservation', id=evenement.idCo) }}">
+        {{ form.idEvent() }}
+        {{ form.idSpec() }}
+        <label for="duree">Durée de la réservation</label>
+        {{ form.dureeRes() }}
+        {{ form.prixRes() }}
+        <button type="submit" name="button" value="Réserver">Réserver</button>
+    </form>
+</main>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% block header %}
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>{% block title %}{% endblock %}</title>
+<link rel="stylesheet" href="/static/css/header.css">
+{% block style %} 
+{% endblock %}
+</head>
+<body>
+    <header>
+        <p>FestIUT'O</p>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('home')}}">Accueil</a></li>
+                <li><a href="{{ url_for('rechercher_concert')}}">Concerts</a></li>
+                <li><a href="{{ url_for('rechercher_evenement')}}">Evenement</a></li>
+                <li><a href="{{ url_for('rechercher_groupe')}}">Groupes</a></li>
+                <li><a href="{{ url_for('planning')}}">Planning</a></li>
+                <li><a href="{{ url_for('favoris')}}">Favoris</a></li>
+                {% if utilisateur.idRole == 2%}
+                    <li><a href="{{ url_for('admin_ajouter')}}">Admin</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </header>
+{% endblock %}
+{% block content %}
+{% endblock %}

@@ -1,0 +1,16 @@
+
+{% extends "home.html" %}
+{% block title %}Artiste {{artiste.nomArt}}{% endblock %}
+{% block style %} 
+<link rel="stylesheet" href="/static/css/information.css">
+{% endblock %}
+{% block content %}
+<main>
+    <h1>{{artiste.nomArt}} {{artiste.prenomArt}}</h1>
+    <p>Instrument de l'artiste : {{instrument.nomInstr}}</p>
+    <p>Groupes de l'artiste : </p>
+    {% for groupe in groupes %}
+    <p>{{groupe.nomGr}}</p>
+    {% endfor %}
+</main>
+{% endblock %}

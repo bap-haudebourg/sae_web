@@ -1,0 +1,38 @@
+{% extends "home.html" %}
+{% block title %}Ajout Concert{% endblock %}
+{% block style %} 
+<link rel="stylesheet" href="/static/css/admin.css">
+{% endblock %}
+{% block content %}
+    <main>
+        <h1>Concert :</h1>
+        <form>
+            <div class="form-group">
+                <label for="nomConcert">Nom du concert</label>
+                {{ form.nomConcert(class="form-control", placeholder="Nom du concert") }}
+            </div>
+            <div class="form-group">
+                <label for="dateConcert">Date du concert</label>
+                {{ form.dateConcert(class="form-control", placeholder="Date du concert") }}
+            </div>
+            <div class="form-group">
+                <label for="nomLieu">Nom du lieu</label>
+                {{ form.nomLieu(class="form-control", placeholder="Nom du lieu") }}
+            </div>
+            <div class="form-group">
+                <label for="prixConcert">Prix du concert</label>
+                {{ form.prixConcert(class="form-control", placeholder="Prix du concert") }}
+            </div>
+            <div class="form-group">
+                <label for="nomGr">Nom du groupe</label>
+                {{ form.nomGr(class="form-control", placeholder="Nom du groupe") }}
+            </div>
+            <div class="form-group">
+                <label for="nomStyle">Nom du style</label>
+                {{ form.nomStyle(class="form-control", placeholder="Nom du style") }}
+            </div>            
+            <button type="submit" class="btn btn-primary">Ajouter</button>
+            <a href="/admin_ajouter" class="btn btn-primary">Retour</a>
+        </form>
+    </main>
+{% endblock %}

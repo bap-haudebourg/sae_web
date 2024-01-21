@@ -1,0 +1,18 @@
+{% extends "home.html" %}
+{% block title %}Concert{% endblock %}
+{% block style %} 
+<link rel="stylesheet" href="/static/css/information.css">
+{% endblock %}
+{% block content %}
+    <main>
+        <h1>Concert</h1>
+        <p>Nom du concert : {{ concert.nomCo }}</p>
+        <p>Groupe : {{ groupe.nomGr }}</p>
+        <p>Heure de début : {{ concert.debutCo }}</p>
+        <p>Heure de fin : {{ concert.finCo }}</p>
+        <p>Date : {{ evenement.dateEvent }}</p>
+        <p>Lieu : {{ evenement.nomLieu }}</p>
+        <p>Prix : {{ evenement.prix }}€</p>
+        <a href="{{ url_for('reservation', id=concert.idCo) }}">Réserver</a>
+    </main>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends "home.html" %}
+{% block title %}Ajout Artiste{% endblock %}
+{% block style %} 
+<link rel="stylesheet" href="/static/css/admin.css">
+{% endblock %}
+{% block content %}
+    <main>
+        <h1>Artiste :</h1>
+        <form>
+            <div class="form-group">
+                <label for="nomArt">Nom de l'artiste</label>
+                {{ form.nomArt(class="form-control", placeholder="Nom de l'artiste") }}
+            </div>
+            <div class="form-group">
+                <label for="prenomArt">Prénom de l'artiste</label>
+                {{ form.prenomArt(class="form-control", placeholder="Prénom de l'artiste") }}
+            </div>
+            <div class="form-group">
+                <label for="ddnArt">Date de naissance</label>
+                {{ form.ddnArt(class="form-control", placeholder="Date de naissance") }}
+            </div>
+            <div class="form-group">
+                <label for="nomInstr">Nom de l'instrument</label>
+                {{ form.nomInstr(class="form-control", placeholder="Nom de l'instrument") }}
+            </div>
+            <button type="submit" class="btn btn-primary">Ajouter</button>
+            <a href="/admin_ajouter" class="btn btn-primary">Retour</a>
+        </form>
+    </main>
+{% endblock %}

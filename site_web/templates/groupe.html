@@ -1,0 +1,18 @@
+{% extends "home.html" %}
+{% block title %}Groupe {{ groupe.nomGr }}{% endblock %}
+{% block style %} 
+<link rel="stylesheet" href="/static/css/information.css">
+{% endblock %}
+{% block content %}
+    <main> 
+        <h1>Groupe {{ groupe.nomGr }}</h1>
+        <p>Artistes : </p>
+        <ul>
+            {% for art in artistes %}
+                <li><a href="{{url_for('artiste', id=art.idArt)}}">{{ art.nomArt }} {{ art.prenomArt }} ({{art.nomInstr}})</a></li>
+            {% endfor %}
+        </ul>
+        <p>Style : {{ style.nomStyle }}</p>
+        <a href="{{url_for('ajouter_favoris', id=groupe.idGr)}}">Ajouter au favoris</a>
+    </main>
+{% endblock %}

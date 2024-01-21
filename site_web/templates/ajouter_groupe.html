@@ -1,0 +1,26 @@
+{% extends "home.html" %}
+{% block title %}Ajout Groupe{% endblock %}
+{% block style %} 
+<link rel="stylesheet" href="/static/css/admin.css">
+{% endblock %}
+{% block content %}
+    <main>
+        <h1>Groupe :</h1>
+        <form>
+            <div class="form-group">
+                <label for="nomGr">Nom du Groupe</label>
+                {{ form.nomGr(class="form-control", placeholder="Nom du groupe") }}
+            </div>
+            <div class="form-group">
+                <label for="descGr">Description du Groupe</label>
+                {{ form.descGr(class="form-control", placeholder="Description du groupe") }}
+            </div>
+            <div class="form-group">
+                <label for="nomStyle">Nom du Style</label>
+                {{ form.nomStyle(class="form-control", placeholder="Nom du style") }}
+            </div>
+            <button type="submit" class="btn btn-primary">Ajouter</button>
+            <a href="/admin_ajouter" class="btn btn-primary">Retour</a>
+        </form>
+    </main>
+{% endblock %}

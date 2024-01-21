@@ -1,0 +1,26 @@
+
+{% extends "home.html" %}
+{% block title %}Evenement{% endblock %}
+{% block style %}
+<link rel="stylesheet" href="/static/css/rechercher.css">
+{% endblock %}
+{% block content %}
+    <main>
+        <form action="{{url_for('rechercher_evenement')}}" method="POST">
+                <label for="nomEvent">Nom de l'événement</label>
+                {{ form.nomEvent(value=nomEvent) }}
+            <button type="submit" class="btn btn-primary">Rechercher</button>
+        </form>
+        {% for ev in evenements %}
+             <div>
+                <p>{{ev.nomEvent}}</p>
+                <p>{{ev.nomGr}}</p>
+                <p>{{ev.nomLieu}}</p>
+                <p>{{ev.nomCo}}</p>
+            </div>
+        {% endfor %}
+            
+    </main>
+</body>
+</html>
+{% endblock %}

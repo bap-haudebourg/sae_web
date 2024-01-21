@@ -1,0 +1,22 @@
+{% extends "home.html" %}
+{% block title %}FestIUT'O{% endblock %}
+{% block style %} 
+<link rel="stylesheet" href="/static/css/admin.css">
+{% endblock %}
+{% block content %}
+    <main>
+        <h1>Artiste/Groupe :</h1>
+        <form>
+            <div class="form-group">
+                <label for="nomArt">Nom de l'artiste</label>
+                {{ form.nomArt(class="form-control", placeholder="Nom de l'artiste") }}
+            </div>
+            <div class="form-group">
+                <label for="nomGr">Nom du Groupe</label>
+                {{ form.nomGr(class="form-control", placeholder="Nom du groupe") }}
+            </div>
+            <button type="submit" class="btn btn-primary">Ajouter</button>
+            <a href="/admin_ajouter" class="btn btn-primary">Retour</a>
+        </form>
+    </main>
+{% endblock %}

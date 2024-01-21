@@ -1,0 +1,16 @@
+
+body{
+    margin: 0;
+    background-color: #dddddd;
+}
+main{
+    margin : 0 30px;
+}
+div{
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+main p {
+    margin: 0;
+    padding: 0;
+}

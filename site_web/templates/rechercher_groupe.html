@@ -1,0 +1,26 @@
+
+{% extends "home.html" %}
+{% block title %}Groupes{% endblock %}
+{% block style %}
+<link rel="stylesheet" href="/static/css/rechercher.css">
+{% endblock %}
+{% block content %}
+    <main>
+        <form action="{{url_for('rechercher_groupe')}}" method="POST">
+            <label for="nomGr">Nom du groupe :</label>
+            {{form.nomGr(value=nomGr)}}
+            <label for="nomStyle">Style :</label>
+            {{form.nomStyle(value=nomStyle)}}
+            <input type="submit" value="Rechercher">
+        </form>
+        {% for groupe in groupes%}
+        <div>
+            <a href="{{ url_for('groupe', id=groupe.idGr) }}">{{ groupe.nomGr }}</a>
+            <p>{{groupe.descGr}}</p>
+            <p>{{groupe.nomStyle}}</p>
+        </div>
+        {% endfor %}
+    </main>
+</body>
+</html>
+{% endblock %}

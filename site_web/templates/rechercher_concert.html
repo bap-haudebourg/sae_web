@@ -1,0 +1,26 @@
+
+{% extends "home.html" %}
+{% block title %}Concerts{% endblock %}
+{% block style %}
+<link rel="stylesheet" href="/static/css/rechercher.css">
+{% endblock %}
+{% block content %}
+    <main>
+        <form action="{{url_for('rechercher_concert')}}" method="POST">
+            <label for="nomConcert">Nom du Concert :</label>
+            {{form.nomConcert(value=nomConcert)}}
+            <label for="nomStyle">Style :</label>
+            {{form.nomStyle(value=nomStyle)}}
+            <input type="submit" value="Rechercher">
+        </form>
+        {% for concert in concerts %}
+            <div class="concert">
+                <a href="/concert/{{ concert.idCo }}">{{concert.nomCo}}</a>
+                <p>{{ concert.nomGr }}</p>
+                <p>{{ concert.nomStyle }}</p>
+            </div>
+        {% endfor %}
+    </main>
+</body>
+</html>
+{% endblock %}

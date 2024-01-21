@@ -1,0 +1,18 @@
+{% extends "home.html" %}
+{% block title %}Planning{% endblock %}
+{% block style %} 
+<link rel="stylesheet" href="/static/css/planning.css">
+{% endblock %}
+{% block content %}
+    <main> 
+        <h1>Planning : </h1>
+        {% for date in dates %}
+            <p>{{ date }}</p>
+            <div>
+            {% for concert in dates[date] %}
+                <li>{{ concert.date }} : <a href="{{url_for('concert', id=concert.idCo)}}">{{ concert.nomCo }}</a></li>         
+            {% endfor %}
+            </div>
+        {% endfor %}
+    </main>
+{% endblock %}
